@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_gray">#C3C3C3</color>
+    <color name="light_green">#00FF00</color>
+    <color name="background_color">#3A5784</color>
+    <color name="header_background_color">#23344F</color>
+    <color name="add_voting_machine_background">#23344F</color>
+    <color name="list_divider_background">#7F7F7F</color>
+    <color name="voter_list_header_background">#091D59</color>
+    <color name="voter_list_background_1">#3A5784</color>
+    <color name="voter_list_background_2">#576984</color>
+
+    <color name="edit_text_text_color_white">#FFFFFF</color>
+    <color name="edit_text_text_color_black">#000000</color>
+    <color name="alert_background_red_color">#B70000</color>
+    <color name="alert_background_blue_color">#21314B</color>
+
+</resources>

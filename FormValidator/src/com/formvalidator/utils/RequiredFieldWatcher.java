@@ -1,0 +1,145 @@
+package com.formvalidator.utils;
+
+import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import com.formvalidator.R;
+import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
+import com.formvalidator.widget.CustomSpinner.CustomSpinner;
+import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+
+public class RequiredFieldWatcher implements TextWatcher,
+		SpinnerAndRadioButtonWatcher {
+
+	private TextView mTextView = null;
+	private Context mContext = null;
+	private int mFormType = 0;
+	private Drawable alertIcon = null;
+
+	public RequiredFieldWatcher(View txtView, Context context) {
+		mTextView = (TextView) txtView;
+		mContext = context;
+		setAlertIcon();
+	}
+
+	public RequiredFieldWatcher(int formType, View txtView, Context context) {
+		mTextView = (TextView) txtView;
+		mContext = context;
+		mFormType = formType;
+		setAlertIcon();
+	}
+
+	private void setAlertIcon() {
+		alertIcon = mContext.getResources().getDrawable(R.drawable.alert_icon);
+		alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(),
+				alertIcon.getIntrinsicHeight()));
+	}
+
+	private boolean isSubmitButtonClicked() {
+
+		boolean submitButtonClicked = false;
+		try {
+			submitButtonClicked = SharedPrefUtils.getSubmitButtonStatus(
+					mFormType, mContext);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return submitButtonClicked;
+	}
+
+	@Override
+	public void afterTextChanged(Editable s) {
+		markRequiredField(s.toString().length());
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence s, int start, int count,
+			int after) {
+		// Nothing to be done here
+
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+		// Nothing to be done here
+
+	}
+
+	private void markRequiredField(int strLen) {
+
+		if (strLen > 0) {
+			mTextView.setError(null, null);
+		} else if (strLen <= 0) {
+
+			if (isSubmitButtonClicked()) {
+				String msg = mContext.getString(R.string.empty_string);
+				if (mTextView instanceof EditText) {
+					msg = mContext.getString(R.string.gen_required_msg);
+				}
+				mTextView.setError(msg, alertIcon);
+			}
+		}
+	}
+
+	@Override
+	public void markRequiredFieldForSpinner(CustomSpinner customSpinner) {
+
+		int position = customSpinner.getSelectedItemPosition();
+
+		if (position == 0 && isSubmitButtonClicked()) {
+			mTextView.setError("Error", alertIcon);
+		} else if (position > 0) {
+			mTextView.setError(null, null);
+		}
+	}
+
+	@Override
+	public void markRequiredFieldForRadioButton(CustomRadioGroup radioGroup) {
+		int id = radioGroup.getCheckedRadioButtonId();
+        View commentView = null;
+
+        //Get comment edit text view
+        View view = (View)radioGroup.getParent();
+        int radioGroupTableRowIndex = ((ViewGroup)view.getParent()).indexOfChild(view);
+        if(radioGroupTableRowIndex >= 0){
+            TableRow rowEditText = (TableRow)((TableLayout)view.getParent()).getChildAt(radioGroupTableRowIndex + 1);
+            if(null != rowEditText){
+                commentView = rowEditText.getChildAt(0);
+            }
+        }
+
+        //Validation for the radio button
+		if (id == -1 && isSubmitButtonClicked()) {
+			mTextView.setError("Error", alertIcon);
+		} else {
+			mTextView.setError(null, null);
+		}
+
+        //Validation for Comment Edit text
+        if (null != commentView && commentView instanceof EditText) {
+            String tag = commentView.getTag().toString();
+
+            if (id > 0 && null != tag) {
+                int childIndex = Integer.parseInt(tag);
+                if (id == radioGroup.getChildAt(childIndex).getId()) {
+                    int len = ((EditText)commentView).length();
+                    if (len == 0) {
+                        ((EditText)commentView).setError(
+                                "Error", alertIcon);
+                    }
+                }else {
+                    ((EditText)commentView).setError(
+                            null, null);
+                }
+            }
+        }
+	}
+}

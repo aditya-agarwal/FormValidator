@@ -1,0 +1,114 @@
+package com.formvalidator.widget.ViewFlipper;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.ViewFlipper;
+import com.formvalidator.R;
+import com.formvalidator.utils.GroupInfo;
+import com.formvalidator.utils.QuestionGroupAdapter;
+import com.formvalidator.utils.SharedPrefUtils;
+import com.formvalidator.widget.CustomTableLayout.CustomTableLayout;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class CustomViewFlipper extends ViewFlipper {
+	protected int mFormType = -1;
+
+
+	protected Context mContext;
+
+
+	// LIST OF INVALID VIEWS
+	private List<Integer> mListOfInvalidViews = new ArrayList<Integer>();
+
+	public CustomViewFlipper(Context context,
+			int tabId, int formType) {
+		super(context);
+		mFormType = formType;
+		mContext = context;
+	}
+
+	public CustomViewFlipper(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+
+	public void setSubmitButtonClickedFromForm(int formType) {
+		try {
+			// set status of submit button clicked to true
+			SharedPrefUtils.saveSubmitButtonStatus(formType, true, mContext);
+		} catch (Exception ex) {
+//			ErrorHandler.getInstance().reportError(ex,
+//					ErrorHandler.UI_ERROR_CODE_SHARED_PREF_SAVE_FAIL);
+		}
+	}
+
+
+
+	protected boolean validateForms(List<Integer> listOfFormsToValidate,
+			int tableLayoutId, ListView groupListView) {
+		boolean result = true;
+		mListOfInvalidViews.clear();
+		for (int id : listOfFormsToValidate) {
+			View view = findViewById(id);
+			if (null != view) {
+				CustomTableLayout tableLayout = (CustomTableLayout) view
+						.findViewById(tableLayoutId);
+				if (null != tableLayout) {
+					boolean temp = tableLayout.validateForm();
+					if (temp == false) {
+						result = temp;
+						mListOfInvalidViews.add(id);
+					}
+				}
+			}
+		}
+		updateRequiredErrorTagInGroups(groupListView);
+		return result;
+	}
+
+	public void showAlert() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+		String posBtn = getContext().getString(R.string.dialog_button_continue);
+		builder.setMessage(R.string.group_list_required_field_alert);
+		builder.setPositiveButton(posBtn,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				});
+		builder.show();
+	}
+
+	protected void updateRequiredErrorTagInGroups(ListView listView) {
+		if (listView.getAdapter() instanceof QuestionGroupAdapter) {
+			QuestionGroupAdapter adapter = (QuestionGroupAdapter) listView
+					.getAdapter();
+			List<GroupInfo> groupList = adapter.getList();
+			for (GroupInfo group : groupList) {
+				int pos = groupList.indexOf(group);
+				boolean validity = true;
+				for (Integer id : mListOfInvalidViews) {
+					View view = findViewById(id);
+					if (null != view && null != view.getTag()) {
+						int position = Integer.parseInt(view.getTag()
+								.toString());
+						if (pos == position) {
+							validity = false;
+							break;
+						}
+					}
+				}
+				groupList.get(pos).setValidity(validity);
+			}
+			adapter.notifyDataSetChanged();
+		}
+	}
+
+}

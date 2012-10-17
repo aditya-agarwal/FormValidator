@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/poll_open_form_1_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ListView
+            android:id="@+id/question_group_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@color/list_divider_background"
+            android:dividerHeight="@dimen/list_divider_height"
+            android:drawSelectorOnTop="false"
+            android:cacheColorHint="#00000000"
+            android:layout_above="@+id/scroll_view_question_button"/>
+
+    <ScrollView
+            android:id="@+id/scroll_view_question_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ff0000">
+
+        <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
+                xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
+                android:id="@+id/custom_table_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:collapseColumns="true"
+                mrp:formType="204">
+
+            <TableRow
+                    android:id="@+id/poll_group_list_poll_close_tableRow1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/header_background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="0dip"
+                    android:tag="@string/gen_tag_required"
+                    android:visibility="gone">
+
+                <TextView
+                        android:id="@+id/poll_group_list_poll_close_question_1"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_1"/>
+
+                <EditText
+                        android:id="@+id/poll_group_list_poll_close_answer_1"
+                        style="@style/field_edit_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dip"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:hint="@string/empty_string"
+                        android:singleLine="true"/>
+            </TableRow>
+
+            <TableRow
+                    android:id="@+id/poll_group_list_during_day_tableRow2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/header_background_color"
+                    android:paddingBottom="5dip"
+                    android:tag="@string/gen_tag_required"
+                    android:visibility="gone">
+
+                <TextView
+                        android:id="@+id/poll_group_list_during_day_question_1"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_1"/>
+
+                <EditText
+                        android:id="@+id/poll_group_list_during_day_answer_1"
+                        style="@style/field_edit_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dip"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:hint="@string/empty_string"
+                        android:singleLine="true"/>
+            </TableRow>
+
+            <TableRow
+                    android:id="@+id/poll_close_election_board_tableRow4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="5dip"
+                    android:tag="@string/gen_tag_not_required">
+
+                <Button
+                        android:id="@+id/question_group_submit_btn"
+                        style="@style/frag_view_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_selector"
+                        android:text="SUBMIT"/>
+            </TableRow>
+        </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
+    </ScrollView>
+
+</RelativeLayout>

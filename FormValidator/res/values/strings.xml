@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FormValidator</string>
+    <string name="form_type_1">FORM TYPE 1</string>
+    <string name="form_type_2">FORM TYPE 2</string>
+    <string name="submit_button">Submit</string>
+
+    <string name="gen_tag_required">is_required</string>
+    <string name="gen_tag_not_required">not required</string>
+    <string name="gen_tag_required_yes">0</string>
+    <string name="gen_tag_required_no">1</string>
+    <string name="gen_required_msg">Required</string>
+    <string name="gen_yes">Yes</string>
+    <string name="gen_no">No</string>
+    <string name="dialog_button_continue">Continue</string>
+    <string name="group_list_required_field_alert">When all required fields in a group are  validated the required badge will be removed.</string>
+
+    <string name="empty_string"></string>
+
+    <!--Hint-->
+    <string name="hint">Hint</string>
+
+    <!--Questions-->
+    <string name="question_1">Question 1</string>
+    <string name="question_2">Question 2</string>
+    <string name="question_3">Question 3</string>
+    <string name="question_4">Question 4</string>
+    <string name="question_5">Question 5</string>
+
+</resources>

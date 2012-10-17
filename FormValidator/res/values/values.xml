@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <dimen name="first_line_text_size">15sp</dimen>
+    <dimen name="second_line_text_size">12sp</dimen>
+    <dimen name="frag_title_text_size">7sp</dimen>
+    <dimen name="frag_widget_layout_margin">10dp</dimen>
+    <dimen name="frag_widget_padding">20dp</dimen>
+    <dimen name="frag_widget_layout_margin_sides">10dp</dimen>
+    <dimen name="frag_widget_narrow_layout_margin">3dp</dimen>
+    <dimen name="list_divider_height">3dip</dimen>
+
+    <string-array name="challenge_ballot_reason_list">
+        <item>Invalid Id</item>
+        <item>Address Mismatch</item>
+        <item>Absentee Ballot</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="poll_close_group_list">
+        <item>Closing Totals</item>
+        <item>Election Board</item>
+        <item>Ballot Box</item>
+    </string-array>
+    <string-array name="during_day_group_list">
+        <item>Voting Process</item>
+        <item>Polling Place Observations</item>
+        <item>Observations</item>
+        <item>Provisional Ballots</item>
+    </string-array>
+
+</resources>

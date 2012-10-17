@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="frag_view_style">
+        <item name="android:layout_marginTop">@dimen/frag_widget_layout_margin</item>
+        <item name="android:layout_marginBottom">@dimen/frag_widget_layout_margin</item>
+        <item name="android:layout_marginLeft">@dimen/frag_widget_layout_margin_sides</item>
+        <item name="android:layout_marginRight">@dimen/frag_widget_layout_margin_sides</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="signature_done_button_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="frag_view_style_date_time_button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="frag_view_style_narrow">
+        <item name="android:layout_margin">@dimen/frag_widget_narrow_layout_margin</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="field_header_no_edit_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="field_no_edit_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="field_no_edit_font_style_big">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="field_header_edit_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="field_header_edit_font_style_white">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="field_edit_font_style_white">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="field_edit_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/editbox_background_normal</item>
+    </style>
+
+    <style name="block_header_font_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="screen_header_font_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="info_msg_font_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="alert_msg_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="alert_header_msg_font_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="poll_open_text_view_font_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="pop_up_unread_alert_text_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="pop_up_read_alert_text_style">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="pop_up_unread_alert_header_style">
+        <item name="android:background">@color/alert_background_red_color</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

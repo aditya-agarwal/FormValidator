@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:background="@color/background_color"
+            android:scrollbars="none" >
+
+    <RelativeLayout
+            android:id="@+id/form_1_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
+                xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
+                android:id="@+id/form_1_table_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:collapseColumns="true"
+                mrp:formType="203" >
+
+            <!-- Question 1 -->
+
+            <TableRow
+                    android:id="@+id/form_1_tableRow1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="5dip"
+                    android:tag="@string/gen_tag_required" >
+
+                <TextView
+                        android:id="@+id/question_1_lbl"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.3"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_1" />
+
+                <EditText
+                        android:id="@+id/form_1_et_precinct_captain"
+                        style="@style/field_edit_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dip"
+                        android:layout_weight="0.7"
+                        android:gravity="left"
+                        android:hint="@string/hint"
+                        android:singleLine="true" />
+            </TableRow>
+
+            <!-- Custom Spinner -->
+
+            <TableRow
+                    android:id="@+id/form_1_tableRow2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="5dip"
+                    android:tag="@string/gen_tag_required" >
+
+                <TextView
+                        android:id="@+id/question_3_lbl"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.7"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_2" />
+
+                <com.formvalidator.widget.CustomSpinner.CustomSpinner
+                        android:id="@+id/form_1_answer_3_spinner"
+                        style="@style/field_no_edit_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="0.3"
+                        android:gravity="left" />
+            </TableRow>
+
+            <!-- Was the polling place facility handicapped accessible -->
+
+            <TableRow
+                    android:id="@+id/poll_open_form_2_tableRow4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@color/header_background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="5dip"
+                    android:tag="@string/gen_tag_required" >
+
+                <TextView
+                        android:id="@+id/poll_open_question_4_lbl"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.7"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_3" />
+
+                <com.formvalidator.widget.RadioGroup.CustomRadioGroup
+                        android:id="@+id/poll_open_q4_radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                    <RadioButton
+                            android:id="@+id/poll_open_q4_radio_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/gen_yes"
+                            android:textColor="@android:color/white" />
+
+                    <RadioButton
+                            android:id="@+id/poll_open_q4_radio_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/gen_no"
+                            android:textColor="@android:color/white" />
+                </com.formvalidator.widget.RadioGroup.CustomRadioGroup>
+            </TableRow>
+
+            <!-- Were election instruction posters displayed -->
+
+            <TableRow
+                    android:id="@+id/poll_open_form_2_tableRow5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_color"
+                    android:paddingBottom="5dip"
+                    android:paddingTop="5dip"
+                    android:tag="@string/gen_tag_required" >
+
+                <TextView
+                        android:id="@+id/poll_open_question_5_lbl"
+                        style="@style/poll_open_text_view_font_style"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.7"
+                        android:gravity="left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/question_4" />
+
+                <com.formvalidator.widget.RadioGroup.CustomRadioGroup
+                        android:id="@+id/poll_open_q5_radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                    <RadioButton
+                            android:id="@+id/poll_open_q5_radio_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/gen_yes"
+                            android:textColor="@android:color/white" />
+
+                    <RadioButton
+                            android:id="@+id/poll_open_q5_radio_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/gen_no"
+                            android:textColor="@android:color/white" />
+                </com.formvalidator.widget.RadioGroup.CustomRadioGroup>
+            </TableRow>
+        </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
+
+        <Button
+                android:id="@+id/poll_open_form_2_btn_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/poll_open_form_2_table_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dip"
+                android:background="@drawable/button_selector"
+                android:gravity="center"
+                android:text="@string/submit_button"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+    </RelativeLayout>
+
+</ScrollView>

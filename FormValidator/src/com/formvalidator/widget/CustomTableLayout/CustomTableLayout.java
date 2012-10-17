@@ -1,0 +1,212 @@
+package com.formvalidator.widget.CustomTableLayout;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.*;
+import com.formvalidator.R;
+import com.formvalidator.utils.RequiredFieldWatcher;
+import com.formvalidator.widget.CustomSpinner.CustomSpinner;
+import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+
+/**
+ * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
+ */
+public class CustomTableLayout extends TableLayout {
+
+    private int mFormType = 0;
+
+    public CustomTableLayout(Context context) {
+        super(context);
+    }
+
+    public CustomTableLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+        TypedArray a = context.obtainStyledAttributes(attrs,
+                R.styleable.FormType);
+        mFormType = Integer
+                .parseInt(a.getString(R.styleable.FormType_formType));
+
+        if (getTag() != null) {
+            mFormType = Integer.parseInt(getTag().toString());
+        }
+    }
+
+    // Called when submit or next button is clicked
+    public boolean validateForm() {
+
+        boolean result = true;
+
+        Drawable alertIcon = getResources().getDrawable(R.drawable.alert_icon);
+        alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(),
+                alertIcon.getIntrinsicHeight()));
+
+        TextView txtView = null;
+
+        for (int i = 0; i < getChildCount(); i++) {
+
+            TableRow row = (TableRow) getChildAt(i);
+
+            if (null != row.getTag()
+                    && row.getTag()
+                    .equals(getResources().getString(
+                            R.string.gen_tag_required))) {
+
+                //Ignore this counter
+                Object counterTag = row
+                        .getTag(0);
+                int machineCount = 0;
+                View answerView = row.getChildAt(1);
+
+                if (row.getChildCount() == 1) {
+                    answerView = row.getChildAt(0);
+                }
+
+                if (row.getChildAt(0) instanceof TextView) {
+                    txtView = (TextView) row.getChildAt(0);
+                }
+
+                // validation for voting machine
+                if (null != counterTag) {
+                    machineCount = (Integer) counterTag;
+                    if (machineCount <= 0) {
+                        txtView.setError("Error", alertIcon);
+                        result = false;
+                    } else {
+                        txtView.setError(null, null);
+                    }
+                    continue;
+                }
+
+                if (answerView instanceof EditText) {
+
+                    if (null == answerView.getTag()) {
+                        int len = ((EditText) answerView).getText().length();
+                        if (len == 0) {
+                            txtView.setError("Error", alertIcon);
+                            result = false;
+                            continue;
+                        }
+                    } else {
+                        View view = getChildAt(i - 1);
+
+                        if (view instanceof TableRow) {
+                            View previousAnswerView = ((TableRow) view)
+                                    .getChildAt(1);
+
+                            if (previousAnswerView instanceof RadioGroup) {
+                                String tag = answerView.getTag().toString();
+                                int id = ((RadioGroup) previousAnswerView)
+                                        .getCheckedRadioButtonId();
+
+                                if (id > 0 && null != tag) {
+                                    int childIndex = Integer.parseInt(tag);
+                                    if (id == ((RadioGroup) previousAnswerView)
+                                            .getChildAt(childIndex).getId()) {
+                                        int len = ((EditText) answerView)
+                                                .getText().length();
+                                        if (len == 0) {
+                                            ((EditText) answerView).setError(
+                                                    "Error", alertIcon);
+                                            result = false;
+                                            continue;
+                                        }
+                                    }
+                                }
+                            } else if (previousAnswerView instanceof EditText) {
+                                int lenOfPreviousEditText = ((EditText) previousAnswerView)
+                                        .getText().length();
+
+                                if (lenOfPreviousEditText > 0) {
+                                    int len = ((EditText) answerView).getText()
+                                            .length();
+                                    if (len == 0) {
+                                        ((EditText) answerView).setError(
+                                                "Error", alertIcon);
+                                        result = false;
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                if (answerView instanceof RadioGroup) {
+                    int id = ((RadioGroup) answerView)
+                            .getCheckedRadioButtonId();
+                    if (id == -1) {
+                        txtView.setError("Error", alertIcon);
+                        result = false;
+                        continue;
+                    }
+                }
+                if (answerView instanceof Spinner) {
+                    int position = ((Spinner) answerView)
+                            .getSelectedItemPosition();
+                    if (position == 0) {
+                        txtView.setError("Error", alertIcon);
+                        result = false;
+                        continue;
+                    }
+                }
+                if (answerView instanceof CheckBox) {
+                    boolean isChecked = ((CheckBox) answerView).isChecked();
+
+                    if (!isChecked) {
+                        ((CheckBox) answerView).setError("Error", alertIcon);
+                        result = false;
+                        continue;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public void onFinishInflate() {
+        setRequiredTextWatcher();
+    }
+
+    private void setRequiredTextWatcher() {
+
+        for (int i = 0; i < getChildCount(); i++) {
+            TableRow row = (TableRow) getChildAt(i);
+
+            if (row.getChildCount() > 1) {
+                View view = row.getChildAt(1);
+
+                if (view instanceof EditText) {
+                    ((EditText) view)
+                            .addTextChangedListener(new RequiredFieldWatcher(
+                                    mFormType, row.getChildAt(0), getContext()));
+                }
+                if (view instanceof CustomSpinner) {
+                    ((CustomSpinner) view)
+                            .setRequiredFieldWatcher(new RequiredFieldWatcher(
+                                    mFormType, row.getChildAt(0), getContext()));
+                }
+                if (view instanceof CustomRadioGroup) {
+                    ((CustomRadioGroup) view)
+                            .setRequiredFieldWatcher(new RequiredFieldWatcher(
+                                    mFormType, row.getChildAt(0), getContext()));
+                }
+            }
+
+            //Setting Listener for Comment Edit text in Table Layout
+            else if (row.getChildCount() ==  1) {
+                View view = row.getChildAt(0);
+                if (view instanceof EditText) {
+                    ((EditText) view)
+                            .addTextChangedListener(new RequiredFieldWatcher(
+                                    mFormType, row.getChildAt(0), getContext()));
+                }
+            }
+        }
+    }
+}

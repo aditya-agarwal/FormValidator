@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+    <RelativeLayout
+            android:layout_margin="10dip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+        <TextView
+                android:id="@+id/question_group_name"
+                style="@style/field_header_edit_font_style_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Form Validator" />
+
+        <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/arrow" />
+
+        <TextView
+                android:id="@+id/question_required_msg"
+                style="@style/field_edit_font_style_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/arrow"
+                android:text="@string/gen_required_msg"
+                android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>
