@@ -16,6 +16,10 @@ import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
 import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
 
+/**
+ * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
+ */
+
 public class RequiredFieldWatcher implements TextWatcher,
 		SpinnerAndRadioButtonWatcher {
 

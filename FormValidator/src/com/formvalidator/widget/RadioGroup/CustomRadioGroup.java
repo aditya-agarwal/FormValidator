@@ -3,8 +3,7 @@ package com.formvalidator.widget.RadioGroup;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RadioGroup;
-
-import com.formvalidator.utils.RequiredFieldWatcher;
+import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,7 +13,7 @@ import com.formvalidator.utils.RequiredFieldWatcher;
  */
 public class CustomRadioGroup extends RadioGroup {
 
-    private RequiredFieldWatcher mWatcher;
+    private SpinnerAndRadioButtonWatcher mWatcher;
 
     public CustomRadioGroup(Context context) {
         super(context);
@@ -24,10 +23,17 @@ public class CustomRadioGroup extends RadioGroup {
         super(context, attrs);
     }
 
-    public void setRequiredFieldWatcher(RequiredFieldWatcher watcher){
+    /**
+     * Register the Required Field watcher that will be called when an item is selected
+     * @param watcher SpinnerAndRadioButtonWatcher
+     */
+    public void setRequiredFieldWatcher(SpinnerAndRadioButtonWatcher watcher){
         mWatcher = watcher;
     }
 
+    /**
+     * Called after a radio button item is selected from onCheckedChanged()
+     */
     public void afterRadioButtonItemSelected(){
         mWatcher.markRequiredFieldForRadioButton(this);
     }

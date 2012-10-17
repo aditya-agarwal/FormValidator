@@ -18,21 +18,36 @@ public class GroupInfo {
         mIsValid = isValid;
     }
 
-
+    /**
+     *
+     * @return group name
+     */
     public String getGroupName() {
         return mGroupName;
     }
 
+    /**
+     *
+     * @return whether all the fields in the group have been filled or not
+     */
     public boolean isValid() {
         return mIsValid;
     }
 
+    /**
+     *
+     * @param status Group status: whether all the fields in the group have been filled or not
+     */
     public void setValidity(boolean status){
         mIsValid = status;
     }
 
-
-    public static ArrayList<GroupInfo> initList(String [] groupName){
+    /**
+     *
+     * @param groupName
+     * @return initalized list of group names
+     */
+    public static ArrayList<GroupInfo> initListOfGroups(String[] groupName){
         ArrayList<GroupInfo> list = new ArrayList<GroupInfo>();
 
         for(String name : groupName){

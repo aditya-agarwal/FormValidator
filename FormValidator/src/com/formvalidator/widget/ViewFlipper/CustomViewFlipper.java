@@ -37,9 +37,12 @@ public abstract class CustomViewFlipper extends ViewFlipper {
 		super(context, attrs);
 	}
 
+    /**
+     * Set the status of the submit button in the shared preferences
+     * @param formType int id of the form type on which the submit button was clicked
+     */
 	public void setSubmitButtonClickedFromForm(int formType) {
 		try {
-			// set status of submit button clicked to true
 			SharedPrefUtils.saveSubmitButtonStatus(formType, true, mContext);
 		} catch (Exception ex) {
 //			ErrorHandler.getInstance().reportError(ex,
@@ -48,9 +51,14 @@ public abstract class CustomViewFlipper extends ViewFlipper {
 	}
 
 
-
-	protected boolean validateForms(List<Integer> listOfFormsToValidate,
-			int tableLayoutId, ListView groupListView) {
+    /**
+     * Validate the groups or child views of the view flipper and set the error tags depending on the validity
+     * @param listOfFormsToValidate
+     * @param tableLayoutId
+     * @param groupListView
+     * @return whether or not all the fields in all the groups have been filled
+     */
+	protected boolean validateForms(List<Integer> listOfFormsToValidate,int tableLayoutId, ListView groupListView) {
 		boolean result = true;
 		mListOfInvalidViews.clear();
 		for (int id : listOfFormsToValidate) {
@@ -71,6 +79,9 @@ public abstract class CustomViewFlipper extends ViewFlipper {
 		return result;
 	}
 
+    /**
+     * Show an alert dialog
+     */
 	public void showAlert() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 		String posBtn = getContext().getString(R.string.dialog_button_continue);
@@ -86,6 +97,10 @@ public abstract class CustomViewFlipper extends ViewFlipper {
 		builder.show();
 	}
 
+    /**
+     * Toggle the "Required" tag for the groups based on the validity
+     * @param listView View that holds the groups
+     */
 	protected void updateRequiredErrorTagInGroups(ListView listView) {
 		if (listView.getAdapter() instanceof QuestionGroupAdapter) {
 			QuestionGroupAdapter adapter = (QuestionGroupAdapter) listView

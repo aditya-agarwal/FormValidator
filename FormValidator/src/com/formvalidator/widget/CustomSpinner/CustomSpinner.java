@@ -3,8 +3,7 @@ package com.formvalidator.widget.CustomSpinner;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Spinner;
-
-import com.formvalidator.utils.RequiredFieldWatcher;
+import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,7 +13,7 @@ import com.formvalidator.utils.RequiredFieldWatcher;
  */
 public class CustomSpinner extends Spinner {
 
-    private RequiredFieldWatcher mWatcher;
+    private SpinnerAndRadioButtonWatcher mWatcher;
 
     public CustomSpinner(Context context) {
         super(context);
@@ -36,10 +35,17 @@ public class CustomSpinner extends Spinner {
         super(context, attrs, defStyle, mode);
     }
 
-    public void setRequiredFieldWatcher(RequiredFieldWatcher watcher){
+    /**
+     * Register the Required Field watcher that will be called when an item is selected
+     * @param watcher SpinnerAndRadioButtonWatcher
+     */
+    public void setRequiredFieldWatcher(SpinnerAndRadioButtonWatcher watcher){
         mWatcher = watcher;
     }
 
+    /**
+     * Called after a spinner item is selected from onItemSelected()
+     */
     public void afterSpinnerItemSelected(){
         mWatcher.markRequiredFieldForSpinner(this);
     }

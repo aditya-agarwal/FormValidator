@@ -1,5 +1,9 @@
 package com.formvalidator.forms;
 
+/**
+ * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
+ */
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -35,17 +39,13 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 
 	private QuestionGroupAdapter mGroupListAdapter = null;
 
-	// Volunteer info
-	private ArrayAdapter<String> mPrecinctAdapter = null;
-	private CustomSpinner mPrecinctAssignedSP = null;
-	private ArrayList<String> mPrecinctNameList = null;
-
 	// ArrayList of Forms to validate
 	private static List<Integer> mListOfFormsToValidate = Arrays.asList(
 			R.id.during_day_voting_process_container,
 			R.id.during_day_polling_place_observations_container,
 			R.id.during_day_observations_container,
 			R.id.during_day_provisional_ballots_container);
+
 
 	public DuringDayForm(Context context) {
 		super(context, 0,205);
@@ -55,56 +55,62 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 		super(context, attrs);
 	}
 
-	private void initViews() {
-		String[] questionArr = getResources().getStringArray(
-				R.array.during_day_group_list);
-		mGroupList = GroupInfo.initList(questionArr);
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        initViewFlipper();
+        initGroupList();
+    }
+
+    /**
+     * Initalize the layout inflater and
+     * Add all the layouts of groups to the view flipper
+     */
+    private void initViewFlipper() {
+        mLayoutInflater = (LayoutInflater) getContext().getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        addChildToViewFlipper(R.layout.during_day_container);
+        addChildToViewFlipper(R.layout.during_day_voting_process);
+        addChildToViewFlipper(R.layout.during_day_polling_place_observations);
+        addChildToViewFlipper(R.layout.during_day_observations);
+        addChildToViewFlipper(R.layout.during_day_provisional_ballots);
+    }
+
+    /**
+     * -Initialize the List view of the Groups
+     * -Set the List adapter of the Group
+     * -Set the click listener of the submit button
+     */
+    private void initGroupList() {
+		String[] groupNameArr = getResources().getStringArray(R.array.during_day_group_list);
+		mGroupList = GroupInfo.initListOfGroups(groupNameArr);
 		mGroupListAdapter = new QuestionGroupAdapter(getContext(), mGroupList);
 		mGroupLV = (ListView) findViewById(R.id.question_group_listview);
 		if (null != mGroupLV) {
 			mGroupLV.setAdapter(mGroupListAdapter);
 			mGroupLV.setOnItemClickListener(this);
 		}
+
+        Button submitBtn = (Button) findViewById(R.id.question_group_submit_btn);
+        submitBtn.setOnClickListener(this);
 	}
 
-	@Override
-	protected void onAttachedToWindow() {
-		super.onAttachedToWindow();
-		initFlipper();
-		initViews();
-	}
-
-	public void initFlipper() {
-		mLayoutInflater = (LayoutInflater) getContext().getSystemService(
-				Context.LAYOUT_INFLATER_SERVICE);
-		populateViewFlipper();
-	}
-
-	private CustomRadioGroup initRadioGroupWidget(int widgetId) {
-		CustomRadioGroup rg = (CustomRadioGroup) findViewById(widgetId);
-		if (null != rg) {
-			rg.setOnCheckedChangeListener(this);
-		}
-		return rg;
-	}
-
-
-	private void populateViewFlipper() {
-        addChildToViewFlipper(R.layout.during_day_container);
-		addChildToViewFlipper(R.layout.during_day_voting_process);
-		addChildToViewFlipper(R.layout.during_day_polling_place_observations);
-		addChildToViewFlipper(R.layout.during_day_observations);
-		addChildToViewFlipper(R.layout.during_day_provisional_ballots);
-	}
-
-	private void addChildToViewFlipper(int layoutId) {
-		View v = mLayoutInflater.inflate(layoutId, null);
-		addView(v);
+    /**
+     * Method to add layouts to the view flipper
+     * @param layoutId
+     */
+    private void addChildToViewFlipper(int layoutId) {
+        View v = mLayoutInflater.inflate(layoutId, null);
+        addView(v);
         initListeners(v);
-	}
+    }
 
-    private void initListeners(View v){
-        CustomTableLayout tableLayout = (CustomTableLayout)v.findViewById(R.id.custom_table_layout);
+    /**
+     * Method to set listeners for radio group and spinner inside the custom table layout
+     * @param layout
+     */
+    private void initListeners(View layout){
+        CustomTableLayout tableLayout = (CustomTableLayout)layout.findViewById(R.id.custom_table_layout);
         for (int i = 0; i < tableLayout.getChildCount(); i++) {
             TableRow row = (TableRow) tableLayout.getChildAt(i);
 
@@ -146,20 +152,13 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 		}
 	}
 
-	private void initPrecinctSpinner() {
-		if (null == mPrecinctAdapter) {
-			mPrecinctAdapter = new ArrayAdapter<String>(getContext(),
-					android.R.layout.simple_spinner_item, mPrecinctNameList);
-		}
-		mPrecinctAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		mPrecinctAssignedSP.setAdapter(mPrecinctAdapter);
-		mPrecinctAssignedSP.setOnItemSelectedListener(this);
-	}
-
-	private void processDuringDayForm() {
-		if (validateForms(mListOfFormsToValidate,
-				R.id.custom_table_layout, mGroupLV)){
+    /**
+     * Called when Submit button is clicked
+     * - Validates the form and handles submission process
+     */
+    private void processDuringDayForm() {
+		if (validateForms(mListOfFormsToValidate,R.id.custom_table_layout, mGroupLV)){
+            //DO SOMETHING OVER HERE LIKE SUBMIT DATA ETC ..
 		} else {
 			showAlert();
 		}
@@ -167,6 +166,9 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+        //If the radio group used in the xml is of type Custom then calling the method will validate the fields
+        // and show the error tags
 		if (group instanceof CustomRadioGroup) {
 			((CustomRadioGroup) group).afterRadioButtonItemSelected();
 		}
@@ -175,6 +177,9 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position,
 			long id) {
+
+        //If the spinner used in the xml is of type Custom then calling the method will validate the fields
+        // and show the error tags
 		if (parent instanceof CustomSpinner) {
 			((CustomSpinner) parent).afterSpinnerItemSelected();
 		}

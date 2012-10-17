@@ -36,7 +36,10 @@ public class CustomTableLayout extends TableLayout {
         }
     }
 
-    // Called when submit or next button is clicked
+    /**
+     *
+     * @return validity of the table layout : whether all fields in the layout have been filled or not
+     */
     public boolean validateForm() {
 
         boolean result = true;
@@ -173,6 +176,13 @@ public class CustomTableLayout extends TableLayout {
         setRequiredTextWatcher();
     }
 
+    /**
+     * Set the required text watcher listener for
+     * - Simple Edit text
+     * - Comment Edit text associated with a radio button
+     * - Custom Spinner
+     * - Custom Radio Group
+     */
     private void setRequiredTextWatcher() {
 
         for (int i = 0; i < getChildCount(); i++) {
