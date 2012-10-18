@@ -123,6 +123,11 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
                 if (view instanceof CustomRadioGroup) {
                     ((CustomRadioGroup) view).setOnCheckedChangeListener(this);
                 }
+            } else if(row.getChildCount() == 1){
+                View view = row.getChildAt(0);
+                if(view instanceof Button) {
+                    ((Button)view).setOnClickListener(this);
+                }
             }
         }
     }
@@ -132,7 +137,7 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 			long id) {
 		// question group list view
 		if (R.id.question_group_listview == parent.getId()) {
-			setDisplayedChild(position + 2);
+			setDisplayedChild(position + 1);
 		}
 	}
 
@@ -143,7 +148,7 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 		case R.id.during_day_observations_next_btn:
 		case R.id.during_day_voting_process_next_btn:
 		case R.id.during_day_provisional_ballots_done_btn:
-			setDisplayedChild(1);
+			setDisplayedChild(0);
 			break;
 		case R.id.question_group_submit_btn:
 			setSubmitButtonClickedFromForm(mFormType);
