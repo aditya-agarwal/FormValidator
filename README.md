@@ -1,4 +1,10 @@
 FormValidator
 =============
 
-FormValidator
+CustomTableLayout : Use this table layout for a form which requires validation
+=================
+
+Usage : See form_type_1.xml or form_type_2.xml
+=====	- In xml file add attribute integer formType and define formType for each type of forms.
+	- For each table row add tag android:tag="@string/gen_tag_required" or android:tag="@string/gen_tag_not_required" based on 
+	whether the elements in the table row need to be validated or not.
