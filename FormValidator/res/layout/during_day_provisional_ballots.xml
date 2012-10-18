@@ -8,10 +8,6 @@
     android:scrollbars="none"
     android:tag="3" >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
         <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
             xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
             android:id="@+id/custom_table_layout"
@@ -204,6 +200,4 @@
                     android:text="Done" />
             </TableRow>
         </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
-    </RelativeLayout>
-
 </ScrollView>

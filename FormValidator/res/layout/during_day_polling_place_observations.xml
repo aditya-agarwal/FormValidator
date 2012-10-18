@@ -8,10 +8,6 @@
     android:scrollbars="none"
     android:tag="1" >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
         <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
             xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
             android:id="@+id/custom_table_layout"
@@ -80,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:hint="@string/hint"
+                    android:hint="@string/hint_yes"
                     android:singleLine="true"
                     android:tag="@string/gen_tag_required_yes" />
             </TableRow>
@@ -175,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:hint="@string/hint"
+                    android:hint="@string/hint_no"
                     android:singleLine="true"
                     android:tag="@string/gen_tag_required_no" />
             </TableRow>
@@ -238,7 +234,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:hint="@string/hint"
+                    android:hint="@string/hint_no"
                     android:singleLine="true"
                     android:tag="@string/gen_tag_required_no" />
             </TableRow>
@@ -338,6 +334,4 @@
                     android:text="Done" />
             </TableRow>
         </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
-    </RelativeLayout>
-
 </ScrollView>
