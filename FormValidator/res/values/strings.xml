@@ -6,7 +6,7 @@
     <string name="submit_button">Submit</string>
 
     <string name="gen_tag_required">is_required</string>
-    <string name="gen_tag_not_required">not required</string>
+    <string name="gen_tag_not_required">not_required</string>
     <string name="gen_tag_required_yes">0</string>
     <string name="gen_tag_required_no">1</string>
     <string name="gen_required_msg">Required</string>
@@ -18,6 +18,8 @@
     <string name="empty_string"></string>
 
     <!--Hint-->
+    <string name="hint_yes">Required if Yes above</string>
+    <string name="hint_no">Required if No above</string>
     <string name="hint">Hint</string>
 
     <!--Questions-->
