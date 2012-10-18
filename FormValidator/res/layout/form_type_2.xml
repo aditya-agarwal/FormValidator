@@ -18,7 +18,8 @@
             android:id="@+id/ViewFlipper01"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_below="@id/report_incident_header" >
+            android:layout_below="@id/report_incident_header"
+            android:background="@color/background_color">
 
     </com.formvalidator.forms.DuringDayForm>
 

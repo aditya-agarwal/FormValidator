@@ -140,7 +140,7 @@
                     android:background="@color/background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_required" >
+                    android:tag="@string/gen_tag_not_required" >
 
                 <TextView
                         android:id="@+id/poll_open_question_5_lbl"

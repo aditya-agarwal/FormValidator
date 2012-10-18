@@ -99,7 +99,7 @@ public class RequiredFieldWatcher implements TextWatcher,
 		int position = customSpinner.getSelectedItemPosition();
 
 		if (position == 0 && isSubmitButtonClicked()) {
-			mTextView.setError("Error", alertIcon);
+			mTextView.setError("Required", alertIcon);
 		} else if (position > 0) {
 			mTextView.setError(null, null);
 		}
@@ -122,7 +122,7 @@ public class RequiredFieldWatcher implements TextWatcher,
 
         //Validation for the radio button
 		if (id == -1 && isSubmitButtonClicked()) {
-			mTextView.setError("Error", alertIcon);
+			mTextView.setError("Required", alertIcon);
 		} else {
 			mTextView.setError(null, null);
 		}
@@ -137,7 +137,7 @@ public class RequiredFieldWatcher implements TextWatcher,
                     int len = ((EditText)commentView).length();
                     if (len == 0) {
                         ((EditText)commentView).setError(
-                                "Error", alertIcon);
+                                "Required", alertIcon);
                     }
                 }else {
                     ((EditText)commentView).setError(
