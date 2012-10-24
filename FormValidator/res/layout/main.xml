@@ -12,7 +12,7 @@
             />
     <Button
             android:id="@+id/form_1_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="10dip"
@@ -21,13 +21,13 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
     <Button
-            android:id="@+id/form_1_btn"
-            android:layout_width="wrap_content"
+            android:id="@+id/form_2_btn"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="10dip"
             android:background="@drawable/button_selector"
-            android:text="@string/form_type_1"
+            android:text="@string/form_type_2"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 </LinearLayout>

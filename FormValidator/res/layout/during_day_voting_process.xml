@@ -27,7 +27,7 @@
 
                 <TextView
                     android:id="@+id/during_day_voting_process_question_1"
-                    style="@style/poll_open_text_view_font_style"
+                    style="@style/text_view_font_style"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -71,7 +71,7 @@
 
                 <TextView
                     android:id="@+id/during_day_voting_process_question_2"
-                    style="@style/poll_open_text_view_font_style"
+                    style="@style/text_view_font_style"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -115,7 +115,7 @@
 
                 <TextView
                     android:id="@+id/during_day_voting_process_question_3"
-                    style="@style/poll_open_text_view_font_style"
+                    style="@style/text_view_font_style"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -159,7 +159,7 @@
 
                 <TextView
                     android:id="@+id/during_day_voting_process_question_4"
-                    style="@style/poll_open_text_view_font_style"
+                    style="@style/text_view_font_style"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -224,7 +224,7 @@
 
                 <TextView
                     android:id="@+id/during_day_voting_process_question_5"
-                    style="@style/poll_open_text_view_font_style"
+                    style="@style/text_view_font_style"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
