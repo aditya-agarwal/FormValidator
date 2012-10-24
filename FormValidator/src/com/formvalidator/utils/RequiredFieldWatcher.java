@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.formvalidator.R;
 import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
-import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM

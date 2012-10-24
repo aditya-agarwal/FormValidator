@@ -3,7 +3,7 @@ package com.formvalidator.activities;
 import android.os.Bundle;
 import com.formvalidator.R;
 import com.formvalidator.interfaces.BackKeyHandler;
-import com.formvalidator.widget.ViewFlipper.CustomViewFlipper;
+import com.formvalidator.widget.CustomViewFlipper.CustomViewFlipper;
 
 /**
  * Created with IntelliJ IDEA.

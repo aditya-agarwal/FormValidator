@@ -6,7 +6,7 @@ import android.widget.*;
 import com.formvalidator.R;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
 import com.formvalidator.widget.CustomTableLayout.CustomTableLayout;
-import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 
 import java.util.ArrayList;
 

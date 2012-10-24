@@ -10,7 +10,7 @@ import android.widget.*;
 import com.formvalidator.R;
 import com.formvalidator.utils.RequiredFieldWatcher;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
-import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM

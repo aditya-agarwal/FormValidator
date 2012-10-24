@@ -1,7 +1,7 @@
 package com.formvalidator.interfaces;
 
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
-import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
+import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA.

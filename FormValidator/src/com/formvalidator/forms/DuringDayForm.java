@@ -19,8 +19,8 @@ import com.formvalidator.utils.GroupInfo;
 import com.formvalidator.utils.QuestionGroupAdapter;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
 import com.formvalidator.widget.CustomTableLayout.CustomTableLayout;
-import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
-import com.formvalidator.widget.ViewFlipper.CustomViewFlipper;
+import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
+import com.formvalidator.widget.CustomViewFlipper.CustomViewFlipper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,7 +63,7 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
         if (null != callBack && getDisplayedChild() == 0){
             callBack.callSuper();
         } else {
-            showPrevious();
+            setDisplayedChild(0);
         }
     }
 

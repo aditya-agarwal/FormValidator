@@ -1,4 +1,4 @@
-package com.formvalidator.widget.ViewFlipper;
+package com.formvalidator.widget.CustomViewFlipper;
 
 import android.app.AlertDialog;
 import android.content.Context;

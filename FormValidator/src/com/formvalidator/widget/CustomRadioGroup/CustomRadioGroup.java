@@ -1,4 +1,4 @@
-package com.formvalidator.widget.RadioGroup;
+package com.formvalidator.widget.CustomRadioGroup;
 
 import android.content.Context;
 import android.util.AttributeSet;
