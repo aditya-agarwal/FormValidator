@@ -4,10 +4,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 import com.formvalidator.R;
+import com.formvalidator.interfaces.BackKeyHandler;
 import com.formvalidator.utils.GroupInfo;
 import com.formvalidator.utils.QuestionGroupAdapter;
 import com.formvalidator.utils.SharedPrefUtils;
@@ -16,10 +18,28 @@ import com.formvalidator.widget.CustomTableLayout.CustomTableLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created with IntelliJ IDEA.
+ * User: Aditya Agarwal
+ * Date: 10/18/12
+ * Time: 9:58 PM
+ *
+ * View Flipper to handle validation of a group of views and show Required error tag in parent view
+ */
 public abstract class CustomViewFlipper extends ViewFlipper {
-	protected int mFormType = -1;
 
+    public abstract String getTag();
 
+    /**
+     * Back button handler to be implemented by child views
+     * @param callBack to call super
+     */
+    public abstract void onBackPressed(BackKeyHandler callBack);
+
+    private static final String MARKER_START = ">>>>>>>>>>>>>>>>>>>>>>>";
+    private static final String MARKER_END =   " <<<<<<<<<<<<<<<<<<<<<<";
+
+    protected int mFormType = -1;
 	protected Context mContext;
 
 
@@ -125,5 +145,11 @@ public abstract class CustomViewFlipper extends ViewFlipper {
 			adapter.notifyDataSetChanged();
 		}
 	}
+
+    @Override
+    public void setDisplayedChild(int position){
+        Log.d(getTag(), MARKER_START + position + MARKER_END);
+        super.setDisplayedChild(position);
+    }
 
 }

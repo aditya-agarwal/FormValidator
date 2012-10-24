@@ -14,7 +14,16 @@ import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
+ *
+ * Table layout which checks its fields/elements whether they have been filled/selected or not.
+ *
+ * -In xml file add attribute integer formType for the table layout and define formType for each type of forms.
+ * -For each table row add tag android:tag="is_required" or android:tag="not_required" based on whether the elements
+ * in the table row need to be validated or not.
+ *
  */
+
+//TODO : EXPLAIN ALL CUSTOM VIEWS
 public class CustomTableLayout extends TableLayout {
 
     private int mFormType = 0;
@@ -38,7 +47,7 @@ public class CustomTableLayout extends TableLayout {
 
     /**
      *
-     * @return validity of the table layout : whether all fields in the layout have been filled or not
+     * @return validity of the table layout : whether all fields tagged in the layout have been filled or not
      */
     public boolean validateForm() {
 
@@ -77,7 +86,7 @@ public class CustomTableLayout extends TableLayout {
                 if (null != counterTag) {
                     machineCount = (Integer) counterTag;
                     if (machineCount <= 0) {
-                        txtView.setError("Error", alertIcon);
+                        txtView.setError("Required", alertIcon);
                         result = false;
                     } else {
                         txtView.setError(null, null);
@@ -90,11 +99,14 @@ public class CustomTableLayout extends TableLayout {
                     if (null == answerView.getTag()) {
                         int len = ((EditText) answerView).getText().length();
                         if (len == 0) {
-                            txtView.setError("Error", alertIcon);
+                            txtView.setError("Required", alertIcon);
                             result = false;
                             continue;
                         }
-                    } else {
+                    }
+                    // Check which radio button has been selected and based on the tag set in the xml check if edit text
+                    // is required or not
+                    else {
                         View view = getChildAt(i - 1);
 
                         if (view instanceof TableRow) {
@@ -114,7 +126,7 @@ public class CustomTableLayout extends TableLayout {
                                                 .getText().length();
                                         if (len == 0) {
                                             ((EditText) answerView).setError(
-                                                    "Error", alertIcon);
+                                                    "Required", alertIcon);
                                             result = false;
                                             continue;
                                         }
@@ -129,7 +141,7 @@ public class CustomTableLayout extends TableLayout {
                                             .length();
                                     if (len == 0) {
                                         ((EditText) answerView).setError(
-                                                "Error", alertIcon);
+                                                "Required", alertIcon);
                                         result = false;
                                         continue;
                                     }
@@ -143,7 +155,7 @@ public class CustomTableLayout extends TableLayout {
                     int id = ((RadioGroup) answerView)
                             .getCheckedRadioButtonId();
                     if (id == -1) {
-                        txtView.setError("Error", alertIcon);
+                        txtView.setError("Required", alertIcon);
                         result = false;
                         continue;
                     }
@@ -152,7 +164,7 @@ public class CustomTableLayout extends TableLayout {
                     int position = ((Spinner) answerView)
                             .getSelectedItemPosition();
                     if (position == 0) {
-                        txtView.setError("Error", alertIcon);
+                        txtView.setError("Reqiured", alertIcon);
                         result = false;
                         continue;
                     }
@@ -161,7 +173,7 @@ public class CustomTableLayout extends TableLayout {
                     boolean isChecked = ((CheckBox) answerView).isChecked();
 
                     if (!isChecked) {
-                        ((CheckBox) answerView).setError("Error", alertIcon);
+                        ((CheckBox) answerView).setError("Required", alertIcon);
                         result = false;
                         continue;
                     }

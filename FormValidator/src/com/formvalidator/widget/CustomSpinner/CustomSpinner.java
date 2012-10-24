@@ -10,6 +10,9 @@ import com.formvalidator.interfaces.SpinnerAndRadioButtonWatcher;
  * User: Aditya Agarwal
  * Date: 9/18/12
  * Time: 2:26 PM
+ *
+ * Spinner which calls SpinnerAndRadioButtonWatcher after an item is selected. Use this spinner in xml for it be
+ * validated and update it associated text view
  */
 public class CustomSpinner extends Spinner {
 
