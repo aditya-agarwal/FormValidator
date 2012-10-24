@@ -18,6 +18,9 @@ import com.formvalidator.widget.RadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
+ *
+ * Validates EditText, CustomRadioGroup or CustomRadioSpinner every time user makes a change. Calls a method
+ * associated with each of the elements and based on which element was changed.
  */
 
 public class RequiredFieldWatcher implements TextWatcher,
@@ -34,6 +37,12 @@ public class RequiredFieldWatcher implements TextWatcher,
 		setAlertIcon();
 	}
 
+    /**
+     *
+     * @param formType The int type of the form
+     * @param txtView The text view associated with element that needs to show the required error tag
+     * @param context
+     */
 	public RequiredFieldWatcher(int formType, View txtView, Context context) {
 		mTextView = (TextView) txtView;
 		mContext = context;
@@ -47,6 +56,10 @@ public class RequiredFieldWatcher implements TextWatcher,
 				alertIcon.getIntrinsicHeight()));
 	}
 
+    /**
+     * Checks whether the submit button has been clicked or not.
+     * @return
+     */
 	private boolean isSubmitButtonClicked() {
 
 		boolean submitButtonClicked = false;
@@ -93,7 +106,12 @@ public class RequiredFieldWatcher implements TextWatcher,
 		}
 	}
 
-	@Override
+    /**
+     * Validates whether or not an item has been selected from the spinner and marks the associated text view
+     * accordingly.
+     * @param customSpinner
+     */
+    @Override
 	public void markRequiredFieldForSpinner(CustomSpinner customSpinner) {
 
 		int position = customSpinner.getSelectedItemPosition();
@@ -105,6 +123,11 @@ public class RequiredFieldWatcher implements TextWatcher,
 		}
 	}
 
+    /**
+     * Validates whether or not a radio button has been selected and marks the associated text view
+     * accordingly. Also validates the edit text associated with the radio button based on the tag set in the Edit text.
+     * @param radioGroup
+     */
 	@Override
 	public void markRequiredFieldForRadioButton(CustomRadioGroup radioGroup) {
 		int id = radioGroup.getCheckedRadioButtonId();
