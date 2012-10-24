@@ -14,6 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import com.formvalidator.R;
+import com.formvalidator.interfaces.BackKeyHandler;
 import com.formvalidator.utils.GroupInfo;
 import com.formvalidator.utils.QuestionGroupAdapter;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
@@ -24,10 +25,6 @@ import com.formvalidator.widget.ViewFlipper.CustomViewFlipper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-//TODO : Remove all hard coded strings
-//TODO : Remove all instances of MRP
-//TODO : Make it look good
 
 class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 		OnClickListener, OnCheckedChangeListener, OnItemSelectedListener {
@@ -51,9 +48,24 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 		super(context, 0,205);
 	}
 
-	public DuringDayForm(Context context, AttributeSet attrs) {
+    public DuringDayForm(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
+
+
+    @Override
+    public String getTag() {
+        return "DuringDayForm";
+    }
+
+    @Override
+    public void onBackPressed(BackKeyHandler callBack) {
+        if (null != callBack && getDisplayedChild() == 0){
+            callBack.callSuper();
+        } else {
+            showPrevious();
+        }
+    }
 
     @Override
     protected void onAttachedToWindow() {
@@ -154,6 +166,8 @@ class DuringDayForm extends CustomViewFlipper implements OnItemClickListener,
 			setSubmitButtonClickedFromForm(mFormType);
 			processDuringDayForm();
 			break;
+        default:
+            break;
 		}
 	}
 
