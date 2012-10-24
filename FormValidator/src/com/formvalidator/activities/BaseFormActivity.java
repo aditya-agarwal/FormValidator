@@ -1,7 +1,8 @@
-package com.formvalidator;
+package com.formvalidator.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.formvalidator.R;
 
 public class BaseFormActivity extends Activity {
     /**
