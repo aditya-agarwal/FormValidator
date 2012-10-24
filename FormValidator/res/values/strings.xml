@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FormValidator</string>
-    <string name="form_type_1">FORM TYPE 1</string>
-    <string name="form_type_2">FORM TYPE 2</string>
-    <string name="submit_button">Submit</string>
+    <string name="form_type_1">Single Form</string>
+    <string name="form_type_2">Group Of Forms</string>
+    <string name="submit_button">Validate</string>
 
     <string name="gen_tag_required">is_required</string>
     <string name="gen_tag_not_required">not_required</string>
