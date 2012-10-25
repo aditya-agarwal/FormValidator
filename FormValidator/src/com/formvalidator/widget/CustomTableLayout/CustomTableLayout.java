@@ -23,7 +23,6 @@ import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
  *
  */
 
-//TODO : EXPLAIN ALL CUSTOM VIEWS
 public class CustomTableLayout extends TableLayout {
 
     private int mFormType = 0;
