@@ -3,6 +3,7 @@ package com.formvalidator.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import com.formvalidator.utils.SharedPrefUtils;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +14,7 @@ import android.util.Log;
 public abstract class BaseActivity extends Activity {
 
     public abstract String getTag();
+    public abstract int getFormType();
     private static final String MARKER_START = "-_-_-_-_-_-_-_-_-_-_-_";
     private static final String MARKER_END =   " _-_-_-_-_-_-_-_-_-_-_-";
 
@@ -73,6 +75,12 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onDestroy() {
         mark("onDestroy");
+        try {
+            //Reset the status of submit button
+            SharedPrefUtils.saveSubmitButtonStatus(getFormType(), false, this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         super.onDestroy();
     }
 

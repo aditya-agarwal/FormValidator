@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.formvalidator.R;
+import com.formvalidator.constants.AppConstants;
 
 public class BaseFormActivity extends BaseActivity implements View.OnClickListener {
     /**
@@ -43,5 +44,10 @@ public class BaseFormActivity extends BaseActivity implements View.OnClickListen
     @Override
     public String getTag() {
         return "BaseFormActivity";
+    }
+
+    @Override
+    public int getFormType() {
+        return AppConstants.BASE_FORM_TYPE;
     }
 }
