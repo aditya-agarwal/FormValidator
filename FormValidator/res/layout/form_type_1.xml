@@ -105,7 +105,7 @@
                         android:paddingLeft="5dip"
                         android:text="@string/question_3" />
 
-                <com.formvalidator.widget.RadioGroup.CustomRadioGroup
+                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                         android:id="@+id/q4_radio_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                             android:checked="false"
                             android:text="@string/gen_no"
                             android:textColor="@android:color/white" />
-                </com.formvalidator.widget.RadioGroup.CustomRadioGroup>
+                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
             </TableRow>
 
             <TableRow
@@ -149,7 +149,7 @@
                         android:paddingLeft="5dip"
                         android:text="@string/question_4" />
 
-                <com.formvalidator.widget.RadioGroup.CustomRadioGroup
+                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                         android:id="@+id/q5_radio_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
                             android:checked="false"
                             android:text="@string/gen_no"
                             android:textColor="@android:color/white" />
-                </com.formvalidator.widget.RadioGroup.CustomRadioGroup>
+                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
             </TableRow>
 
             <TableRow
