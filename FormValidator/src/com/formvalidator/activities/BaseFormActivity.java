@@ -36,8 +36,8 @@ public class BaseFormActivity extends BaseActivity implements View.OnClickListen
                 intent = new Intent(this, FormTypeTwoActivity.class);
                 startActivity(intent);
                 break;
-
-
+            default:
+                break;
         }
     }
 
