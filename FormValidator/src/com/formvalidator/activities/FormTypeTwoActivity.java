@@ -2,6 +2,7 @@ package com.formvalidator.activities;
 
 import android.os.Bundle;
 import com.formvalidator.R;
+import com.formvalidator.constants.AppConstants;
 import com.formvalidator.interfaces.BackKeyHandler;
 import com.formvalidator.widget.CustomViewFlipper.CustomViewFlipper;
 
@@ -12,6 +13,8 @@ import com.formvalidator.widget.CustomViewFlipper.CustomViewFlipper;
  * Time: 10:58 PM
  */
 public class FormTypeTwoActivity extends BaseActivity {
+    private String LOG_TAG = "FormTypeTwoActivity";
+
     /**
      * Called when the activity is first created.
      */
@@ -33,6 +36,11 @@ public class FormTypeTwoActivity extends BaseActivity {
     }
     @Override
     public String getTag() {
-        return "FormTypeTwoActivity";
+        return LOG_TAG;
+    }
+
+    @Override
+    public int getFormType() {
+        return AppConstants.FORM_TYPE_TWO;
     }
 }

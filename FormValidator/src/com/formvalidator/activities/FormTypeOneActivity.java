@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import com.formvalidator.R;
+import com.formvalidator.constants.AppConstants;
+import com.formvalidator.utils.SharedPrefUtils;
 import com.formvalidator.widget.CustomSpinner.CustomSpinner;
 import com.formvalidator.widget.CustomTableLayout.CustomTableLayout;
 import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
  */
 public class FormTypeOneActivity extends BaseActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
 
+    private String LOG_TAG = "FormTypeOneActivity";
     /**
      * Called when the activity is first created.
      */
@@ -34,6 +37,11 @@ public class FormTypeOneActivity extends BaseActivity implements View.OnClickLis
         switch (view.getId()) {
             case R.id.validate_btn:
                 validateForm();
+                try {
+                    SharedPrefUtils.saveSubmitButtonStatus(203,true,this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             default:
                 break;
@@ -89,7 +97,12 @@ public class FormTypeOneActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public String getTag() {
-        return "FormTypeOneActivity";
+        return LOG_TAG;
+    }
+
+    @Override
+    public int getFormType() {
+        return AppConstants.FORM_TYPE_ONE;
     }
 
     private void validateForm(){
