@@ -11,11 +11,24 @@ See form_type_1 for usage
 - In xml file add attribute integer formType for table layout and define formType for each type of forms.
 - For each table row add tag android:tag="is_required" or android:tag="not_required" based on 
 whether the elements in the table row need to be validated or not.
-- Call method validateForm() on the view for validation which returns boolean.
+- Call method validateForm() for the table layout that needs to be validated
+which returns boolean.
 
 CustomViewFlipper
 ================
- View Flipper to handle validation of a group of views and show Required error tag in parent view.
+View Flipper to handle validation of a group of views and show Required error tag in parent view.
+
+Usage
+=====
+See form_type_2 and DuringDayForm.java for usage
+- Call setSubmitButtonClickedFromForm(int formType) from Form class to save the status of submit button
+in shared preference. This is done so that when moves away from the form after clicking submit button
+and comes back again to the form it will see the required error tags.
+- Call validateForms(List<Integer> listOfFormsToValidate,int tableLayoutId, ListView groupListView)
+passing List of Resource id of the forms to validate along with the custom table layout id and the list view
+which holds all the forms.
+NOTE: In this case all custom table layouts should have the same id
+ 
 
 CustomSpinner
 ============
