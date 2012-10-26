@@ -23,7 +23,7 @@ public class CustomSpinner extends Spinner {
     }
 
     public CustomSpinner(Context context, int mode) {
-        super(context, mode);
+        super(context);
     }
 
     public CustomSpinner(Context context, AttributeSet attrs) {
@@ -35,7 +35,7 @@ public class CustomSpinner extends Spinner {
     }
 
     public CustomSpinner(Context context, AttributeSet attrs, int defStyle, int mode) {
-        super(context, attrs, defStyle, mode);
+        super(context, attrs, defStyle);
     }
 
     /**
