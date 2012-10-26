@@ -26,6 +26,7 @@ import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 public class CustomTableLayout extends TableLayout {
 
     private int mFormType = 0;
+    private Drawable alertIcon = null;
 
     public CustomTableLayout(Context context) {
         super(context);
@@ -38,6 +39,7 @@ public class CustomTableLayout extends TableLayout {
                 R.styleable.FormType);
         mFormType = Integer
                 .parseInt(a.getString(R.styleable.FormType_formType));
+        alertIcon = getResources().getDrawable(R.drawable.alert_icon);
 
         if (getTag() != null) {
             mFormType = Integer.parseInt(getTag().toString());
@@ -52,7 +54,7 @@ public class CustomTableLayout extends TableLayout {
 
         boolean result = true;
 
-        Drawable alertIcon = getResources().getDrawable(R.drawable.alert_icon);
+
         alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(),
                 alertIcon.getIntrinsicHeight()));
 
