@@ -36,7 +36,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="0.3"
+                        android:layout_weight="0.4"
                         android:gravity="left"
                         android:paddingLeft="5dip"
                         android:text="@string/question_1"/>
@@ -47,7 +47,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dip"
-                        android:layout_weight="0.7"
+                        android:layout_weight="0.6"
                         android:gravity="left"
                         android:hint="@string/hint"
                         android:singleLine="true"/>
