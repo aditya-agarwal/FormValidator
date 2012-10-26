@@ -8,7 +8,7 @@ import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
  * User: Aditya Agarwal
  * Date: 9/18/12
  * Time: 2:37 PM
- *
+ * <p/>
  * Interface definitions for callbacks for RadioGroup and Spinner to be invoked when item is selected/checked
  */
 public interface SpinnerAndRadioButtonWatcher {

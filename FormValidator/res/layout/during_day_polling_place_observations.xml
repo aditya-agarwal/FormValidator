@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/during_day_polling_place_observations_container"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dip"
-    android:background="@color/background_color"
-    android:scrollbars="none"
-    android:tag="1" >
+            android:id="@+id/during_day_polling_place_observations_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:background="@color/background_color"
+            android:scrollbars="none"
+            android:tag="1">
 
-        <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
+    <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
             xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
             android:id="@+id/custom_table_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:collapseColumns="true"
-            mrp:formType="205" >
+            mrp:formType="205">
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow1"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/question_1"
                     style="@style/text_view_font_style"
                     android:layout_width="0dip"
@@ -34,42 +34,42 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_1" />
+                    android:text="@string/question_1"/>
 
-                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
+            <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                     android:id="@+id/answer_1_rg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/q1_radio_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_yes"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"/>
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/q1_radio_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_no"
-                        android:textColor="@android:color/white" />
-                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
-            </TableRow>
+                        android:textColor="@android:color/white"/>
+            </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/tableRow1_comment"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <EditText
+            <EditText
                     android:id="@+id/answer_1_comment"
                     style="@style/field_edit_font_style"
                     android:layout_width="fill_parent"
@@ -78,19 +78,19 @@
                     android:gravity="left"
                     android:hint="@string/hint_yes"
                     android:singleLine="true"
-                    android:tag="@string/gen_tag_required_yes" />
-            </TableRow>
+                    android:tag="@string/gen_tag_required_yes"/>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/header_background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/during_day_polling_place_observations_question_2"
                     style="@style/text_view_font_style"
                     android:layout_width="0dip"
@@ -99,9 +99,9 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_2" />
+                    android:text="@string/question_2"/>
 
-                <EditText
+            <EditText
                     android:id="@+id/during_day_polling_place_observations_answer_2"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
@@ -109,19 +109,19 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:hint="@string/empty_string"
-                    android:singleLine="true" />
-            </TableRow>
+                    android:singleLine="true"/>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow3"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/during_day_polling_place_observations_question_3"
                     style="@style/text_view_font_style"
                     android:layout_width="0dip"
@@ -130,42 +130,42 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_3" />
+                    android:text="@string/question_3"/>
 
-                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
+            <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                     android:id="@+id/during_day_polling_place_observations_answer_3_rg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q3_radio_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_yes"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"/>
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q3_radio_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_no"
-                        android:textColor="@android:color/white" />
-                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
-            </TableRow>
+                        android:textColor="@android:color/white"/>
+            </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow3_comment"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <EditText
+            <EditText
                     android:id="@+id/during_day_polling_place_observations_answer_3_comment"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -173,19 +173,19 @@
                     android:gravity="left"
                     android:hint="@string/hint_no"
                     android:singleLine="true"
-                    android:tag="@string/gen_tag_required_no" />
-            </TableRow>
+                    android:tag="@string/gen_tag_required_no"/>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow4"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/header_background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/during_day_polling_place_observations_question_4"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
@@ -193,42 +193,42 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_4" />
+                    android:text="@string/question_4"/>
 
-                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
+            <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                     android:id="@+id/during_day_polling_place_observations_answer_4_rg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q4_radio_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_yes"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"/>
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q4_radio_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_no"
-                        android:textColor="@android:color/white" />
-                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
-            </TableRow>
+                        android:textColor="@android:color/white"/>
+            </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow4_comment"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/header_background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <EditText
+            <EditText
                     android:id="@+id/during_day_polling_place_observations_answer_4_comment"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -236,19 +236,19 @@
                     android:gravity="left"
                     android:hint="@string/hint_no"
                     android:singleLine="true"
-                    android:tag="@string/gen_tag_required_no" />
-            </TableRow>
+                    android:tag="@string/gen_tag_required_no"/>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow5"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/during_day_polling_place_observations_question_5"
                     style="@style/text_view_font_style"
                     android:layout_width="0dip"
@@ -257,9 +257,9 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_5" />
+                    android:text="@string/question_5"/>
 
-                <EditText
+            <EditText
                     android:id="@+id/during_day_polling_place_observations_answer_5"
                     style="@style/field_edit_font_style"
                     android:layout_width="0dip"
@@ -268,19 +268,19 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:hint="@string/empty_string"
-                    android:singleLine="true" />
-            </TableRow>
+                    android:singleLine="true"/>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow6"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/header_background_color"
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
-                android:tag="@string/gen_tag_required" >
+                android:tag="@string/gen_tag_required">
 
-                <TextView
+            <TextView
                     android:id="@+id/during_day_polling_place_observations_question_6"
                     style="@style/text_view_font_style"
                     android:layout_width="0dip"
@@ -289,41 +289,41 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:paddingLeft="5dip"
-                    android:text="@string/question_5" />
+                    android:text="@string/question_5"/>
 
-                <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
+            <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                     android:id="@+id/during_day_polling_place_observations_answer_6_rg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q6_radio_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_yes"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"/>
 
-                    <RadioButton
+                <RadioButton
                         android:id="@+id/during_day_polling_place_observations_q6_radio_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/gen_no"
-                        android:textColor="@android:color/white" />
-                </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
-            </TableRow>
+                        android:textColor="@android:color/white"/>
+            </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
+        </TableRow>
 
-            <TableRow
+        <TableRow
                 android:id="@+id/during_day_polling_place_observations_tableRow9"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:background="@color/background_color"
                 android:paddingBottom="5dip"
-                android:paddingTop="5dip" >
+                android:paddingTop="5dip">
 
-                <Button
+            <Button
                     android:id="@+id/during_day_polling_place_observations_next_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -331,7 +331,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_selector"
                     android:gravity="center"
-                    android:text="Done" />
-            </TableRow>
-        </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
+                    android:text="Done"/>
+        </TableRow>
+    </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
 </ScrollView>

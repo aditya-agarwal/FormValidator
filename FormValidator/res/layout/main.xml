@@ -19,7 +19,7 @@
             android:background="@drawable/button_selector"
             android:text="@string/form_type_1"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     <Button
             android:id="@+id/form_2_btn"
             android:layout_width="fill_parent"
@@ -29,6 +29,6 @@
             android:background="@drawable/button_selector"
             android:text="@string/form_type_2"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 </LinearLayout>
 

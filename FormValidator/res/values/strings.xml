@@ -13,7 +13,9 @@
     <string name="gen_yes">Yes</string>
     <string name="gen_no">No</string>
     <string name="dialog_button_continue">Continue</string>
-    <string name="group_list_required_field_alert">When all required fields in a group are  validated the required badge will be removed.</string>
+    <string name="group_list_required_field_alert">When all required fields in a group are validated the required badge
+        will be removed.
+    </string>
 
     <string name="empty_string"></string>
 

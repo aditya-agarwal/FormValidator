@@ -4,12 +4,12 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@color/background_color"
-            android:scrollbars="none" >
+            android:scrollbars="none">
 
     <RelativeLayout
             android:id="@+id/form_1_container"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent">
 
         <com.formvalidator.widget.CustomTableLayout.CustomTableLayout
                 xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
@@ -17,7 +17,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:collapseColumns="true"
-                mrp:formType="203" >
+                mrp:formType="203">
 
             <!-- Question 1 -->
 
@@ -28,7 +28,7 @@
                     android:background="@color/background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_required" >
+                    android:tag="@string/gen_tag_required">
 
                 <TextView
                         android:id="@+id/question_1_lbl"
@@ -39,7 +39,7 @@
                         android:layout_weight="0.3"
                         android:gravity="left"
                         android:paddingLeft="5dip"
-                        android:text="@string/question_1" />
+                        android:text="@string/question_1"/>
 
                 <EditText
                         android:id="@+id/form_1_et_precinct_captain"
@@ -50,7 +50,7 @@
                         android:layout_weight="0.7"
                         android:gravity="left"
                         android:hint="@string/hint"
-                        android:singleLine="true" />
+                        android:singleLine="true"/>
             </TableRow>
 
             <!-- Custom Spinner -->
@@ -62,7 +62,7 @@
                     android:background="@color/header_background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_required" >
+                    android:tag="@string/gen_tag_required">
 
                 <TextView
                         android:id="@+id/question_3_lbl"
@@ -73,7 +73,7 @@
                         android:layout_weight="0.7"
                         android:gravity="left"
                         android:paddingLeft="5dip"
-                        android:text="@string/question_2" />
+                        android:text="@string/question_2"/>
 
                 <com.formvalidator.widget.CustomSpinner.CustomSpinner
                         android:id="@+id/form_1_answer_3_spinner"
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dip"
                         android:layout_weight="0.3"
-                        android:gravity="left" />
+                        android:gravity="left"/>
             </TableRow>
 
             <TableRow
@@ -92,7 +92,7 @@
                     android:background="@color/background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_required" >
+                    android:tag="@string/gen_tag_required">
 
                 <TextView
                         android:id="@+id/question_4_lbl"
@@ -103,13 +103,13 @@
                         android:layout_weight="0.7"
                         android:gravity="left"
                         android:paddingLeft="5dip"
-                        android:text="@string/question_3" />
+                        android:text="@string/question_3"/>
 
                 <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                         android:id="@+id/q4_radio_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:orientation="horizontal">
 
                     <RadioButton
                             android:id="@+id/q4_radio_yes"
@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="@string/gen_yes"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@android:color/white"/>
 
                     <RadioButton
                             android:id="@+id/q4_radio_no"
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="@string/gen_no"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@android:color/white"/>
                 </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
             </TableRow>
 
@@ -136,7 +136,7 @@
                     android:background="@color/background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_not_required" >
+                    android:tag="@string/gen_tag_not_required">
 
                 <TextView
                         android:id="@+id/question_5_lbl"
@@ -147,13 +147,13 @@
                         android:layout_weight="0.7"
                         android:gravity="left"
                         android:paddingLeft="5dip"
-                        android:text="@string/question_4" />
+                        android:text="@string/question_4"/>
 
                 <com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup
                         android:id="@+id/q5_radio_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:orientation="horizontal">
 
                     <RadioButton
                             android:id="@+id/q5_radio_yes"
@@ -161,7 +161,7 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="@string/gen_yes"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@android:color/white"/>
 
                     <RadioButton
                             android:id="@+id/q5_radio_no"
@@ -169,7 +169,7 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="@string/gen_no"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@android:color/white"/>
                 </com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup>
             </TableRow>
 
@@ -180,7 +180,7 @@
                     android:background="@color/background_color"
                     android:paddingBottom="5dip"
                     android:paddingTop="5dip"
-                    android:tag="@string/gen_tag_not_required" >
+                    android:tag="@string/gen_tag_not_required">
 
                 <Button
                         android:id="@+id/validate_btn"
@@ -195,7 +195,7 @@
                         android:gravity="center"
                         android:text="@string/submit_button"
                         android:textColor="@android:color/white"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
             </TableRow>
         </com.formvalidator.widget.CustomTableLayout.CustomTableLayout>
     </RelativeLayout>

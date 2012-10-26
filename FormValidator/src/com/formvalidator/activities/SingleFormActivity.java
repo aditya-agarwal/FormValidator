@@ -18,16 +18,18 @@ import java.util.ArrayList;
  * Date: 10/18/12
  * Time: 10:59 PM
  */
-public class SingleFormActivity extends BaseActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
+public class SingleFormActivity extends BaseActivity implements View.OnClickListener,
+        RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
 
     private String LOG_TAG = "SingleFormActivity";
+
     /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_type_1 );
+        setContentView(R.layout.form_type_1);
         initListeners();
         initSpinner();
     }
@@ -38,7 +40,7 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
             case R.id.validate_btn:
                 validateForm();
                 try {
-                    SharedPrefUtils.saveSubmitButtonStatus(203,true,this);
+                    SharedPrefUtils.saveSubmitButtonStatus(203, true, this);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -51,8 +53,8 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
     /**
      * Method to set listeners for radio group and spinner inside the custom table layout
      */
-    private void initListeners(){
-        CustomTableLayout tableLayout = (CustomTableLayout)findViewById(R.id.form_1_table_layout);
+    private void initListeners() {
+        CustomTableLayout tableLayout = (CustomTableLayout) findViewById(R.id.form_1_table_layout);
         for (int i = 0; i < tableLayout.getChildCount(); i++) {
             TableRow row = (TableRow) tableLayout.getChildAt(i);
 
@@ -65,10 +67,10 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
                 if (view instanceof CustomRadioGroup) {
                     ((CustomRadioGroup) view).setOnCheckedChangeListener(this);
                 }
-            } else if(row.getChildCount() == 1){
+            } else if (row.getChildCount() == 1) {
                 View view = row.getChildAt(0);
-                if(view instanceof Button) {
-                    ((Button)view).setOnClickListener(this);
+                if (view instanceof Button) {
+                    ((Button) view).setOnClickListener(this);
                 }
             }
         }
@@ -82,11 +84,9 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
             spinnerList.add(i);
         }
 
-        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(
-                this, android.R.layout.simple_spinner_item,
-                spinnerList);
-        spinnerArrayAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(this,
+                android.R.layout.simple_spinner_item, spinnerList);
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         CustomSpinner spinner = (CustomSpinner) findViewById(R.id.form_1_answer_3_spinner);
 
@@ -105,14 +105,14 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
         return AppConstants.FORM_TYPE_ONE;
     }
 
-    private void validateForm(){
-        CustomTableLayout tableLayout = (CustomTableLayout)findViewById(R.id.form_1_table_layout);
+    private void validateForm() {
+        CustomTableLayout tableLayout = (CustomTableLayout) findViewById(R.id.form_1_table_layout);
         tableLayout.validateForm();
     }
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        if(radioGroup instanceof CustomRadioGroup){
+        if (radioGroup instanceof CustomRadioGroup) {
             ((CustomRadioGroup) radioGroup).afterRadioButtonItemSelected();
         }
     }

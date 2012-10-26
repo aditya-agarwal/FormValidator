@@ -13,13 +13,12 @@ public class GroupInfo {
     private String mGroupName;
     private boolean mIsValid = true;
 
-    private GroupInfo(String name, boolean isValid){
+    private GroupInfo(String name, boolean isValid) {
         mGroupName = name;
         mIsValid = isValid;
     }
 
     /**
-     *
      * @return group name
      */
     public String getGroupName() {
@@ -27,7 +26,6 @@ public class GroupInfo {
     }
 
     /**
-     *
      * @return whether all the fields in the group have been filled or not
      */
     public boolean isValid() {
@@ -35,22 +33,20 @@ public class GroupInfo {
     }
 
     /**
-     *
      * @param status Group status: whether all the fields in the group have been filled or not
      */
-    public void setValidity(boolean status){
+    public void setValidity(boolean status) {
         mIsValid = status;
     }
 
     /**
-     *
      * @param groupName
      * @return initalized list of group names
      */
-    public static ArrayList<GroupInfo> initListOfGroups(String[] groupName){
+    public static ArrayList<GroupInfo> initListOfGroups(String[] groupName) {
         ArrayList<GroupInfo> list = new ArrayList<GroupInfo>();
 
-        for(String name : groupName){
+        for (String name : groupName) {
             GroupInfo groupInfo = new GroupInfo(name, true);
             list.add(groupInfo);
         }

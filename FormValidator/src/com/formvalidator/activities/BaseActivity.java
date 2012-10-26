@@ -14,9 +14,11 @@ import com.formvalidator.utils.SharedPrefUtils;
 public abstract class BaseActivity extends Activity {
 
     public abstract String getTag();
+
     public abstract int getFormType();
+
     private static final String MARKER_START = "-_-_-_-_-_-_-_-_-_-_-_";
-    private static final String MARKER_END =   " _-_-_-_-_-_-_-_-_-_-_-";
+    private static final String MARKER_END = " _-_-_-_-_-_-_-_-_-_-_-";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +86,7 @@ public abstract class BaseActivity extends Activity {
         super.onDestroy();
     }
 
-    private void mark(String msg){
+    private void mark(String msg) {
         Log.d(getTag(), MARKER_START + msg + MARKER_END);
     }
 }

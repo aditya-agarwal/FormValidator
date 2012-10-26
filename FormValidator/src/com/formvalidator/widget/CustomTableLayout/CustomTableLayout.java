@@ -14,13 +14,12 @@ import com.formvalidator.widget.CustomRadioGroup.CustomRadioGroup;
 
 /**
  * Created with IntelliJ IDEA. User: Aditya Agarwal Date: 9/17/12 Time: 12:21 PM
- *
+ * <p/>
  * Table layout which checks its fields/elements whether they have been filled/selected or not.
- *
+ * <p/>
  * -In xml file add attribute integer formType for the table layout and define formType for each type of forms.
  * -For each table row add tag android:tag="is_required" or android:tag="not_required" based on whether the elements
  * in the table row need to be validated or not.
- *
  */
 
 public class CustomTableLayout extends TableLayout {
@@ -35,10 +34,8 @@ public class CustomTableLayout extends TableLayout {
     public CustomTableLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        TypedArray a = context.obtainStyledAttributes(attrs,
-                R.styleable.FormType);
-        mFormType = Integer
-                .parseInt(a.getString(R.styleable.FormType_formType));
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FormType);
+        mFormType = Integer.parseInt(a.getString(R.styleable.FormType_formType));
         alertIcon = getResources().getDrawable(R.drawable.alert_icon);
 
         if (getTag() != null) {
@@ -47,7 +44,6 @@ public class CustomTableLayout extends TableLayout {
     }
 
     /**
-     *
      * @return validity of the table layout : whether all fields tagged in the layout have been filled or not
      */
     public boolean validateForm() {
@@ -55,8 +51,7 @@ public class CustomTableLayout extends TableLayout {
         boolean result = true;
 
 
-        alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(),
-                alertIcon.getIntrinsicHeight()));
+        alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(), alertIcon.getIntrinsicHeight()));
 
         TextView txtView = null;
 
@@ -64,14 +59,10 @@ public class CustomTableLayout extends TableLayout {
 
             TableRow row = (TableRow) getChildAt(i);
 
-            if (null != row.getTag()
-                    && row.getTag()
-                    .equals(getResources().getString(
-                            R.string.gen_tag_required))) {
+            if (null != row.getTag() && row.getTag().equals(getResources().getString(R.string.gen_tag_required))) {
 
                 //Ignore this counter
-                Object counterTag = row
-                        .getTag(0);
+                Object counterTag = row.getTag(0);
                 int machineCount = 0;
                 View answerView = row.getChildAt(1);
 
@@ -111,38 +102,30 @@ public class CustomTableLayout extends TableLayout {
                         View view = getChildAt(i - 1);
 
                         if (view instanceof TableRow) {
-                            View previousAnswerView = ((TableRow) view)
-                                    .getChildAt(1);
+                            View previousAnswerView = ((TableRow) view).getChildAt(1);
 
                             if (previousAnswerView instanceof RadioGroup) {
                                 String tag = answerView.getTag().toString();
-                                int id = ((RadioGroup) previousAnswerView)
-                                        .getCheckedRadioButtonId();
+                                int id = ((RadioGroup) previousAnswerView).getCheckedRadioButtonId();
 
                                 if (id > 0 && null != tag) {
                                     int childIndex = Integer.parseInt(tag);
-                                    if (id == ((RadioGroup) previousAnswerView)
-                                            .getChildAt(childIndex).getId()) {
-                                        int len = ((EditText) answerView)
-                                                .getText().length();
+                                    if (id == ((RadioGroup) previousAnswerView).getChildAt(childIndex).getId()) {
+                                        int len = ((EditText) answerView).getText().length();
                                         if (len == 0) {
-                                            ((EditText) answerView).setError(
-                                                    "Required", alertIcon);
+                                            ((EditText) answerView).setError("Required", alertIcon);
                                             result = false;
                                             continue;
                                         }
                                     }
                                 }
                             } else if (previousAnswerView instanceof EditText) {
-                                int lenOfPreviousEditText = ((EditText) previousAnswerView)
-                                        .getText().length();
+                                int lenOfPreviousEditText = ((EditText) previousAnswerView).getText().length();
 
                                 if (lenOfPreviousEditText > 0) {
-                                    int len = ((EditText) answerView).getText()
-                                            .length();
+                                    int len = ((EditText) answerView).getText().length();
                                     if (len == 0) {
-                                        ((EditText) answerView).setError(
-                                                "Required", alertIcon);
+                                        ((EditText) answerView).setError("Required", alertIcon);
                                         result = false;
                                         continue;
                                     }
@@ -153,8 +136,7 @@ public class CustomTableLayout extends TableLayout {
 
                 }
                 if (answerView instanceof RadioGroup) {
-                    int id = ((RadioGroup) answerView)
-                            .getCheckedRadioButtonId();
+                    int id = ((RadioGroup) answerView).getCheckedRadioButtonId();
                     if (id == -1) {
                         txtView.setError("Required", alertIcon);
                         result = false;
@@ -162,8 +144,7 @@ public class CustomTableLayout extends TableLayout {
                     }
                 }
                 if (answerView instanceof Spinner) {
-                    int position = ((Spinner) answerView)
-                            .getSelectedItemPosition();
+                    int position = ((Spinner) answerView).getSelectedItemPosition();
                     if (position == 0) {
                         txtView.setError("Reqiured", alertIcon);
                         result = false;
@@ -205,29 +186,24 @@ public class CustomTableLayout extends TableLayout {
                 View view = row.getChildAt(1);
 
                 if (view instanceof EditText) {
-                    ((EditText) view)
-                            .addTextChangedListener(new RequiredFieldWatcher(
-                                    mFormType, row.getChildAt(0), getContext()));
+                    ((EditText) view).addTextChangedListener(new RequiredFieldWatcher(mFormType, row.getChildAt(0),
+                            getContext()));
                 }
                 if (view instanceof CustomSpinner) {
-                    ((CustomSpinner) view)
-                            .setRequiredFieldWatcher(new RequiredFieldWatcher(
-                                    mFormType, row.getChildAt(0), getContext()));
+                    ((CustomSpinner) view).setRequiredFieldWatcher(new RequiredFieldWatcher(mFormType,
+                            row.getChildAt(0), getContext()));
                 }
                 if (view instanceof CustomRadioGroup) {
-                    ((CustomRadioGroup) view)
-                            .setRequiredFieldWatcher(new RequiredFieldWatcher(
-                                    mFormType, row.getChildAt(0), getContext()));
+                    ((CustomRadioGroup) view).setRequiredFieldWatcher(new RequiredFieldWatcher(mFormType,
+                            row.getChildAt(0), getContext()));
                 }
             }
 
             //Setting Listener for Comment Edit text in Table Layout
-            else if (row.getChildCount() ==  1) {
+            else if (row.getChildCount() == 1) {
                 View view = row.getChildAt(0);
                 if (view instanceof EditText) {
-                    ((EditText) view)
-                            .addTextChangedListener(new RequiredFieldWatcher(
-                                    mFormType, row.getChildAt(0), getContext()));
+                    ((EditText) view).addTextChangedListener(new RequiredFieldWatcher(mFormType, row.getChildAt(0), getContext()));
                 }
             }
         }

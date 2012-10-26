@@ -3,7 +3,7 @@
                 android:id="@+id/form_type_2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
     <TextView
             android:id="@+id/report_incident_header"
@@ -12,7 +12,7 @@
             android:background="@color/header_background_color"
             android:gravity="center_horizontal"
             android:padding="10dip"
-            style="@style/screen_header_font_style" />
+            style="@style/screen_header_font_style"/>
 
     <com.formvalidator.forms.DuringDayForm
             android:id="@+id/ViewFlipper01"

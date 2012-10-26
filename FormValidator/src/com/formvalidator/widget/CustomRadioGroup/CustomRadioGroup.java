@@ -25,16 +25,17 @@ public class CustomRadioGroup extends RadioGroup {
 
     /**
      * Register the Required Field watcher that will be called when an item is selected
+     *
      * @param watcher SpinnerAndRadioButtonWatcher
      */
-    public void setRequiredFieldWatcher(SpinnerAndRadioButtonWatcher watcher){
+    public void setRequiredFieldWatcher(SpinnerAndRadioButtonWatcher watcher) {
         mWatcher = watcher;
     }
 
     /**
      * Called after a radio button item is selected from onCheckedChanged()
      */
-    public void afterRadioButtonItemSelected(){
+    public void afterRadioButtonItemSelected() {
         mWatcher.markRequiredFieldForRadioButton(this);
     }
 }

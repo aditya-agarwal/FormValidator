@@ -14,12 +14,12 @@ public class BaseFormActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main );
+        setContentView(R.layout.main);
 
-        Button formOneBtn = (Button)findViewById(R.id.form_1_btn);
+        Button formOneBtn = (Button) findViewById(R.id.form_1_btn);
         formOneBtn.setOnClickListener(this);
 
-        Button formTwoBtn = (Button)findViewById(R.id.form_2_btn);
+        Button formTwoBtn = (Button) findViewById(R.id.form_2_btn);
         formTwoBtn.setOnClickListener(this);
     }
 
@@ -27,12 +27,12 @@ public class BaseFormActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View view) {
         Intent intent = null;
 
-        switch (view.getId()){
-            case R.id.form_1_btn :
-                 intent = new Intent(this, SingleFormActivity.class);
+        switch (view.getId()) {
+            case R.id.form_1_btn:
+                intent = new Intent(this, SingleFormActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.form_2_btn :
+            case R.id.form_2_btn:
                 intent = new Intent(this, GroupFormActivity.class);
                 startActivity(intent);
                 break;

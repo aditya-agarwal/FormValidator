@@ -21,19 +21,20 @@ public class GroupFormActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_type_2 );
+        setContentView(R.layout.form_type_2);
     }
 
     @Override
-    public void onBackPressed(){
-        CustomViewFlipper view = (CustomViewFlipper)findViewById(R.id.ViewFlipper01);
-        view.onBackPressed(new BackKeyHandler(){
+    public void onBackPressed() {
+        CustomViewFlipper view = (CustomViewFlipper) findViewById(R.id.ViewFlipper01);
+        view.onBackPressed(new BackKeyHandler() {
 
-            public void callSuper(){
+            public void callSuper() {
                 GroupFormActivity.super.onBackPressed();
             }
         });
     }
+
     @Override
     public String getTag() {
         return LOG_TAG;
