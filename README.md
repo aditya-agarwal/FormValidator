@@ -7,7 +7,7 @@ Use this table layout for a form which requires validation
 
 Usage
 =====	
-See form_type_1 for usage
+See form_type_1.xml in layout folder for usage
 - In xml file add attribute integer formType for table layout and define formType for each type of forms.
 - For each table row add tag android:tag="is_required" or android:tag="not_required" based on 
 whether the elements in the table row need to be validated or not.
@@ -20,7 +20,7 @@ View Flipper to handle validation of a group of views and show Required error ta
 
 Usage
 =====
-See form_type_2 and DuringDayForm.java for usage
+See form_type_2.xml in layout folder and DuringDayForm.java for usage
 - Call setSubmitButtonClickedFromForm(int formType) from Form class to save the status of submit button
 in shared preference. This is done so that when moves away from the form after clicking submit button
 and comes back again to the form it will see the required error tags.
