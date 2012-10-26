@@ -12,10 +12,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.FormTypeOneActivity"
+        <activity android:name=".activities.SingleFormActivity"
                   android:label="@string/app_name">
         </activity>
-        <activity android:name=".activities.FormTypeTwoActivity"
+        <activity android:name=".activities.GroupFormActivity"
                   android:label="@string/app_name">
         </activity>
 

@@ -12,8 +12,8 @@ import com.formvalidator.widget.CustomViewFlipper.CustomViewFlipper;
  * Date: 10/18/12
  * Time: 10:58 PM
  */
-public class FormTypeTwoActivity extends BaseActivity {
-    private String LOG_TAG = "FormTypeTwoActivity";
+public class GroupFormActivity extends BaseActivity {
+    private String LOG_TAG = "GroupFormActivity";
 
     /**
      * Called when the activity is first created.
@@ -30,7 +30,7 @@ public class FormTypeTwoActivity extends BaseActivity {
         view.onBackPressed(new BackKeyHandler(){
 
             public void callSuper(){
-                FormTypeTwoActivity.super.onBackPressed();
+                GroupFormActivity.super.onBackPressed();
             }
         });
     }

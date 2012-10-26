@@ -45,8 +45,12 @@ each of the elements and based on which element was changed.
 
 SpinnerAndRadioButtonWatcher
 ===========================
-Interface definitions for callbacks for RadioGroup and Spinner to be invoked when item is selected/checked.
+Interface definitions for callbacks for RadioGroup and Spinner to be invoked after item is selected/checked.
 
 BackKeyHandler
 =============
-Interface definition for callback to be invoked when user is done handling back button
+Interface definition for callback to be invoked when forms in view flipper group is done handling back button
+Implement this interface in activity creating the view flipper
+Usage
+====
+See onBackPresses() in GroupFormActivity.java

@@ -29,11 +29,11 @@ public class BaseFormActivity extends BaseActivity implements View.OnClickListen
 
         switch (view.getId()){
             case R.id.form_1_btn :
-                 intent = new Intent(this, FormTypeOneActivity.class);
+                 intent = new Intent(this, SingleFormActivity.class);
                 startActivity(intent);
                 break;
             case R.id.form_2_btn :
-                intent = new Intent(this, FormTypeTwoActivity.class);
+                intent = new Intent(this, GroupFormActivity.class);
                 startActivity(intent);
                 break;
             default:

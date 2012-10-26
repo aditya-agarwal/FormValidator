@@ -18,9 +18,9 @@ import java.util.ArrayList;
  * Date: 10/18/12
  * Time: 10:59 PM
  */
-public class FormTypeOneActivity extends BaseActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
+public class SingleFormActivity extends BaseActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
 
-    private String LOG_TAG = "FormTypeOneActivity";
+    private String LOG_TAG = "SingleFormActivity";
     /**
      * Called when the activity is first created.
      */
