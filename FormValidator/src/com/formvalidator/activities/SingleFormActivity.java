@@ -29,7 +29,7 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_type_1);
+        setContentView(R.layout.single_form);
         initListeners();
         initSpinner();
     }
@@ -112,6 +112,8 @@ public class SingleFormActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
+        //If the radio group used in the xml is of type Custom then calling the method will validate the fields
+        // and show the error tags
         if (radioGroup instanceof CustomRadioGroup) {
             ((CustomRadioGroup) radioGroup).afterRadioButtonItemSelected();
         }

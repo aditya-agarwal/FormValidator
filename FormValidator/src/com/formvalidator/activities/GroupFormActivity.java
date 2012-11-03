@@ -21,7 +21,7 @@ public class GroupFormActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_type_2);
+        setContentView(R.layout.group_form);
     }
 
     @Override
