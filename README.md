@@ -26,7 +26,7 @@ whether the elements in the table row need to be validated or not.
 which returns boolean:
 
 	CustomTableLayout tableLayout = (CustomTableLayout) findViewById(R.id.form_1_table_layout);
-        tableLayout.validateForm();
+    tableLayout.validateForm();
         
 CustomViewFlipper
 ================
