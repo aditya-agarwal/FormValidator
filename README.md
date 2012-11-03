@@ -8,6 +8,17 @@ Use this table layout for a form which requires validation
 Usage
 =====	
 See form_type_1.xml in layout folder for usage
+
+Adding CustomTableLayout in xml:
+
+<com.formvalidator.widget.CustomTableLayout.CustomTableLayout
+                xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
+                android:id="@+id/form_1_table_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:collapseColumns="true"
+                mrp:formType="203">
+                
 - In xml file add attribute integer formType for table layout and define formType for each type of forms.
 - For each table row add tag android:tag="is_required" or android:tag="not_required" based on 
 whether the elements in the table row need to be validated or not.
@@ -22,7 +33,7 @@ Usage
 =====
 See form_type_2.xml in layout folder and DuringDayForm.java for usage
 - Call setSubmitButtonClickedFromForm(int formType) from Form class to save the status of submit button
-in shared preference. This is done so that when moves away from the form after clicking submit button
+in shared preference. This is done so that when user moves away from the form after clicking submit button
 and comes back again to the form it will see the required error tags.
 - Call validateForms(List<Integer> listOfFormsToValidate,int tableLayoutId, ListView groupListView)
 passing List of Resource id of the forms to validate along with the custom table layout id and the list view
