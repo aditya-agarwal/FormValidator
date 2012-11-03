@@ -44,12 +44,11 @@ public class CustomTableLayout extends TableLayout {
     }
 
     /**
-     * @return validity of the table layout : whether all fields tagged in the layout have been filled or not
+     * @return validity of the table layout - whether all fields tagged in the layout have been filled or not
      */
     public boolean validateForm() {
 
         boolean result = true;
-
 
         alertIcon.setBounds(new Rect(0, 0, alertIcon.getIntrinsicWidth(), alertIcon.getIntrinsicHeight()));
 
