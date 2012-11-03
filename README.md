@@ -11,14 +11,14 @@ See form_type_1.xml in layout folder for usage
 
 Adding CustomTableLayout in xml:
 
-<com.formvalidator.widget.CustomTableLayout.CustomTableLayout
+	<com.formvalidator.widget.CustomTableLayout.CustomTableLayout
                 xmlns:mrp="http://schemas.android.com/apk/res/com.formvalidator"
                 android:id="@+id/form_1_table_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:collapseColumns="true"
                 mrp:formType="203">
-                
+
 - In xml file add attribute integer formType for table layout and define formType for each type of forms.
 - For each table row add tag android:tag="is_required" or android:tag="not_required" based on 
 whether the elements in the table row need to be validated or not.
