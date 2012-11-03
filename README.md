@@ -24,10 +24,10 @@ Adding CustomTableLayout in xml:
 whether the elements in the table row need to be validated or not.
 - Call method validateForm() for the table layout that needs to be validated
 which returns boolean:
-
+	
 	CustomTableLayout tableLayout = (CustomTableLayout) findViewById(R.id.form_1_table_layout);
     tableLayout.validateForm();
-        
+    
 CustomViewFlipper
 ================
 View Flipper to handle validation of a group of views and show Required error tag in parent view.
