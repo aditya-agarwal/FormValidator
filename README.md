@@ -1,6 +1,12 @@
 FormValidator
 =============
 
+Form Validatior is an android application which can be also be used as a library in an app which has 
+Forms that require validation. Answers for the questions in the forms can be of any type -- Yes/No (Radio Buttons), 
+Free form text (Edit Text) or choosing one option from a set of options (Spinner). Upon some action 
+from the user a Form or a list of forms can be validated by calling a simple method on the form. 
+Also the fields can be validated as the user is entering data just by setting up listeners for the answers fields 
+
 CustomTableLayout 
 =================
 Use this table layout for a form which requires validation
